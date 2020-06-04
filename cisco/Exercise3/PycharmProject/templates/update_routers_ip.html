@@ -1,0 +1,67 @@
+
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/contact-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Update_Router_BY_IP</h1>
+              <span class="subheading"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form name="sentMessage" id="contactForm" action = "/contact" method="post" novalidate>
+              <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>OldMacAddress</label>
+                <input type="text" class="form-control" placeholder="OldMacAddress" id="OldMacAddress" name="OldMacAddress" required data-validation-required-message="Please enter your Host Name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>NewSapID</label>
+                <input type="text" class="form-control" placeholder="sapid" id="sapid" name='sapid' required data-validation-required-message="Please enter your SapId.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+               <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>newhostname</label>
+                <input type="text" class="form-control" placeholder="hostname" id="hostname" name="hostname" required data-validation-required-message="Please enter your Host Name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+               <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>loopback</label>
+                <input type="text" class="form-control" placeholder="loopback" id="loopback" name="loopback" required data-validation-required-message="Please enter your Host Name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+              <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>MacAddress</label>
+                <input type="text" class="form-control" placeholder="MacAddress" id="MacAddress" name="MacAddress" required data-validation-required-message="Please enter your Host Name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+        <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

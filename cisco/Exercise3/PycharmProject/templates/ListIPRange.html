@@ -1,0 +1,24 @@
+<html>
+  <body>
+    <h1>Router List Based On IP Range</h1>
+    <form method="POST" action="/">
+    </form>
+
+    <h1>Books</h1>
+    <table>
+      {% for d in data %}
+        <tr>
+          <td>
+            {{d.sapid}}
+            {{d.host_name}}
+            {{d.loopback}}
+            {{d.MacAddress}}
+
+          </td>
+
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
+

@@ -1,0 +1,61 @@
+
+
+    <!-- Page Header -->
+      <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/contact-bg.jpg') }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Add_Router</h1>
+              <span class="subheading"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form name="sentMessage" id="contactForm" action = "/contact" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>SapID</label>
+                <input type="text" class="form-control" placeholder="Sapid" id="SapID" name='sapid' required data-validation-required-message="Please enter your SapId.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>HostName</label>
+                <input type="email" class="form-control" placeholder="Host Name" id="hostname" name="hostname" required data-validation-required-message="Please enter your Host Name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                <label>:Loopback</label>
+                <input type="tel" class="form-control" placeholder="LoopBack" name="loopback" id="loopback" required data-validation-required-message="Please enter your LoopBack.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>MacAddress</label>
+                <textarea type="mac" class="form-control" placeholder="MacAddress" name = "MacAddress" id="MacAddress" required data-validation-required-message="Please enter a MacAddress."></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+

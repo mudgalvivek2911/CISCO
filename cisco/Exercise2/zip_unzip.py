@@ -1,0 +1,82 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jun  4 16:38:07 2020
+
+@author: VI322910
+"""
+
+import getpass
+import telnetlib
+
+HOST = "http://localhost:8000/"
+user = input("Enter your remote account: ")
+password = getpass.getpass()
+
+tn = telnetlib.Telnet(HOST)
+
+tn.read_until("login: ")
+tn.write(user + "\n")
+if password:
+    tn.read_until("Password: ")
+    tn.write(password + "\n")
+
+n = int(input("Enter No of file to created"))
+file =""
+for i in range(n):
+    file = "cat file_" + str(i)+" \n"
+    tn.write(file)
+print(tn.read_all())
+
+# importing required modules 
+from zipfile import ZipFile 
+import os 
+  
+def get_all_file_paths(directory): 
+  
+    # initializing empty file paths list 
+    file_paths = [] 
+  
+    # crawling through directory and subdirectories 
+    for root, directories, files in os.walk(directory): 
+        for filename in files: 
+            # join the two strings in order to form the full filepath. 
+            filepath = os.path.join(root, filename) 
+            file_paths.append(filepath) 
+  
+    # returning all file paths 
+    return file_paths         
+  
+ 
+# path to folder which needs to be zipped 
+directory = './python_files'
+  
+# calling function to get all file paths in the directory
+file_paths = get_all_file_paths(directory)
+
+# printing the list of all files to be zipped
+print('Following files will be zipped:')
+for file_name in file_paths:
+    print(file_name)
+
+# writing files to a zipfile
+with ZipFile('my_python_files.zip','w') as zip:
+    # writing each file one by one
+    for file in file_paths:
+        zip.write(file)
+
+print('All files zipped successfully!')
+
+
+# extracting all the files
+# specifying the zip file name
+file_name = "my_python_files.zip"
+
+# opening the zip file in READ mode
+with ZipFile(file_name, 'r') as zip:
+    # printing all the contents of the zip file
+    zip.printdir()
+
+    # extracting all the files
+    print('Extracting all the files now...')
+    zip.extractall()
+    print('Done!')
